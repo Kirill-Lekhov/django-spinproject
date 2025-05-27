@@ -1,0 +1,10 @@
+name: Dependency audit
+run-name: ${{ github.actor }} is checking dependencies vulnerabilities
+on: [push]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+    - run: pip install uv pip-audit-extra
+    - run: uv sync --frozen
+    - run: pip-audit-extra --local --fail-level CRITICAL --severity HIGH
