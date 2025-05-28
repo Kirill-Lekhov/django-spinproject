@@ -1,5 +1,5 @@
 name: Dependency audit
-run-name: ${{ github.actor }} is checking dependencies vulnerabilities
+run-name: Checking dependencies vulnerabilities
 on: [push]
 jobs:
   audit:
